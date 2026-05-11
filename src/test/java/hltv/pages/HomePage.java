@@ -31,6 +31,11 @@ public final class HomePage extends BasePage {
         return new SearchPage(driver, wait, config);
     }
 
+    public LoginDialog openLoginDialog() {
+        driver.findElement(By.cssSelector(".navsignin")).click();
+        return new LoginDialog(driver, wait, config);
+    }
+
     public HomePage hoverMediaMenu() {
         new Actions(driver).moveToElement(visible(mediaMenu)).perform();
         visible(mediaConfirmedLink);
